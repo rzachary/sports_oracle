@@ -1,0 +1,8 @@
+{
+  "name": "pythia",
+  "version": "1.0.0",
+  "description": "Front End for Sports Oracle tool",
+  "main": "index.js",
+  "author": "Rickey Zachary",
+  "license": "MIT"
+}
