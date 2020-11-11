@@ -1,0 +1,12 @@
+requests
+numpy
+scipy
+jsonify
+json
+csv
+os
+flask
+pytest
+collections
+random
+pymongo

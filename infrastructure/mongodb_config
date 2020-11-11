@@ -1,0 +1,16 @@
+use admin
+db.createUser({
+			user:"root",
+			pwd: "root",
+			roles: ["root"]
+		});
+
+use players
+db.createUser({
+			user:"local"
+			user:"local"
+			roles:[{
+					role: "readWrite",
+					db: "players"
+			}]
+		});

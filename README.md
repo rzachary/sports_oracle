@@ -14,9 +14,11 @@ It is a lot of stuff but it is worth it to have everything in one spot.
 ### Installation
 
 '''bash
-
+./start.sh
 
 '''
+The start.sh file contains the commands to start start teh database services, and start the api endpoint instances.
+
 
 ### Components
 
@@ -38,4 +40,5 @@ python -m pytest
 '''
 
 ### TODO
+At somepoint when the apis are big enough and the data insfrastructure is significantly large we should convert the data infrastructure to docker.
 
