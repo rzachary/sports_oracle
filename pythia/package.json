@@ -1,8 +1,13 @@
 {
   "name": "pythia",
   "version": "1.0.0",
-  "description": "Front End for Sports Oracle tool",
+  "description": "front end for sports oracle",
   "main": "index.js",
   "author": "Rickey Zachary",
-  "license": "MIT"
+  "license": "MIT",
+  "dependencies": {
+    "d3": "^6.3.1",
+    "vue": "^2.6.12",
+    "vuejs": "^3.0.1"
+  }
 }

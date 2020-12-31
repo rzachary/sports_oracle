@@ -1,0 +1,5 @@
+- Finish the Football Collector
+	- Linking the new FootballPlayer Item to the spider collector
+	- The parser is working and getting players, I just need to get the mapping wokrking and the dictionary filled and outputted to json
+- Use the collector to fill a mongodb database with players
+- Baseball and Basketball player databses should be next

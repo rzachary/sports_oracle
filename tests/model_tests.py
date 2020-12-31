@@ -14,6 +14,8 @@ class TestModels(unittest.TestCase):
         print(player1)
         print(player2)
 
+    def test_player_comparison(self):
+    	print("start test")
 
 if __name__ == '__main__':
     unittest.main()
