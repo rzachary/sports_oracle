@@ -20,6 +20,7 @@ class BasketballPlayerSpider(scrapy.Spider):
     def parse(self, response):
         il = ItemLoader(item=BasketballPlayerItem(), response=response)
         il.add_xpath('name', '//div[@id="div_players"]/p/a/text()')
+        il.add_value('playertype', 'basketball')
         il.add_xpath('pos', '//div[@id="div_players"]/p/text()', re='\([\w]*[-\w]*\)')
         il.add_xpath('year', '//div[@id="div_players"]/p/text()', re='[\d]{4}-[\d]{4}')
         return il.load_item()

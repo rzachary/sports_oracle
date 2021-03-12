@@ -1,4 +1,10 @@
 version: v1
 kind: Pod
+metadata:
+  name: sports-collectors
+spec:
+  containers:
+  - name: python
+    image: python:latest
 
 

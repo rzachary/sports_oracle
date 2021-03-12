@@ -11,7 +11,7 @@ from itemadapter import ItemAdapter
 from scrapy.exporters import JsonItemExporter
 
 class FootballPlayerPipeline:
-	player_type='Football'
+	player_type = 'Football'
 
 	def open_spider(self, spider):
 		self.file = open('football_players.jl', 'w')
@@ -20,8 +20,7 @@ class FootballPlayerPipeline:
 		self.file.close()
 
 	def _exporter_for_item(self, item):
-		adapter = ItemAdapter(item)
-		
+        adapter = ItemAdapter(item)
 
 	def process_item(self, item, spider):
 		exporter = self._exporter_for_item(item)
@@ -30,10 +29,40 @@ class FootballPlayerPipeline:
 		return item
 
 class BaseballPlayerPipeline:
-	pass
+	player_type = 'Baseball'
+
+    def open_spider(self, spider):
+        self.file = open('baseball_players.jl', 'w')
+
+    def close_spider(self, spider):
+        self.file.close()
+
+    def _exporter_for_item(self, item):
+        adapter = ItemAdapter(item)
+
+    def process_item(self, item, spider):
+        exporter = self._exporter_for_item(item)
+        line = json.dumps(ItemAdapter(item).asdict()) + "\n"
+        self.file.write(line)
+
 
 class BasketballPlayerPipeline:
-	pass
+	player_type = 'Baseketball'
+
+    def open_spider(self, spider):
+        self.file = open('basketball_players.jl', 'w')
+
+    def close_spider(self, spider):
+        self.file.close()
+
+    def _exporter_for_item(self, item):
+        adapter = ItemAdapter(item)
+
+    def process_item(self, item, spider):
+        exporter = self._exporter_for_item(item)
+        line = json.dumps(ItemAdapter(item).asdict()) + "\n"
+        self.file.write(line)
+
 
 class SportsCollectorsPipeline:
     def process_item(self, item, spider):

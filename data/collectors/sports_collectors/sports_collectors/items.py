@@ -8,16 +8,19 @@ from scrapy.item import Item, Field
 
 class FootballPlayerItem(Item):
     name = Field()
+    playertype = Field()
     pos = Field()
     year = Field()
 
 class BaseballPlayerItem(Item):
     name = Field()
+    playertype = Field()
     pos = Field()
     year = Field()
 
 class BasketballPlayerItem(Item):
     name = Field()
+    playertype = Field()
     pos = Field()
     year = Field()
 

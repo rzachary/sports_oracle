@@ -6,6 +6,8 @@ from sports_collectors.items import FootballPlayerItem
 class FootballPlayerSpider(scrapy.Spider):
     name = "football"
 
+    allowed_domains = ['https://www.pro-football-reference.com', 'https://www.espn.com']
+
     def start_requests(self):
         urls = []
         alphabets = [chr(ord('A')+i) for i in range(26)]
@@ -20,6 +22,7 @@ class FootballPlayerSpider(scrapy.Spider):
     def parse(self, response):
         il = ItemLoader(item=FootballPlayerItem(), response=response)
         il.add_xpath('name', '//div[@id="div_players"]/p/a/text()')
+        il.add_value('playertype', 'football')
         il.add_xpath('pos', '//div[@id="div_players"]/p/text()', re='\([\w]*[-\w]*\)')
         il.add_xpath('year', '//div[@id="div_players"]/p/text()', re='[\d]{4}-[\d]{4}')
         return il.load_item()

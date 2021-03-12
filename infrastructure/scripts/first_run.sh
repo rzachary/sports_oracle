@@ -1,4 +1,5 @@
 #!/bin/bash
+
 USER=${MONGODB_USERNAME:-mongo}
 PASS=${MONGODB_PASSWORD:-$(pwgen -s -1 16)}
 DB=${MONGODB_DBNAME:-admin}

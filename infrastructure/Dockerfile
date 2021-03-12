@@ -16,6 +16,13 @@ RUN \
   apt-get install -y mongodb-org && \
   rm -rf /var/lib/apt/lists/*
 
+# Environment Variables for stock run
+ENV MONGODB_USERNAME="sports"
+# ENV MONGODB_PASSWORD=""
+ENV MONGODB_DBNAME="sports"
+ENV MONGODB_ROLE="sports"
+
+
 # Add Scripts to the container
 ADD scripts /scripts
 RUN chmod +x /scripts/*.sh
